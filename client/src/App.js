@@ -15,8 +15,8 @@ class App extends Component {
           <h1 className="App-title">Welcome to Calendarly</h1>
         </header>
 
-        {/* <Signup />
-        <SetupCalendar /> */}
+        {/* <Signup /> */}
+        <SetupCalendar />
         <ScheduleMeeting />
       </div>
     );
