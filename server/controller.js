@@ -1,4 +1,4 @@
-const db;
+// const db;
 const passport= require('./middleware/passport');
 const bodyParser = require('body-parser'); // ?
 

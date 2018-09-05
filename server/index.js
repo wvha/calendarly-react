@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const session = require('./middleware/session');
 const passport = require('./middleware/passport');
@@ -15,14 +16,18 @@ app.use(session);
 app.use(passport.initialize());
 app.use(passport.session());
 
-const reactApp = express.static(`${__dirname}/../client/public`);
-reactRoutes.forEach(route => app.use(route, reactApp));
+// const reactApp = express.static(`${__dirname}/../client/public`);
+// reactRoutes.forEach(route => app.use(route, reactApp));
 
-app.use('/', router);
+app.use(express.static(path.join(__dirname, '../client/build')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
+// app.use('/', router);
 
 const PORT = process.env.PORT || 3000;
 if (require.main === module) {
-  app.listen(PORT, () => console.log('listening to port ${PORT}'));
+  app.listen(PORT, () => console.log(`listening to port ${PORT}`));
 }
 
 module.exports = app;

@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "moment": "^2.22.2",
+    "mongoose": "^5.2.13",
+    "nodemon": "^1.18.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.4.2",
