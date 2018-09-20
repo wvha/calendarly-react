@@ -8,22 +8,18 @@ const UserSchema = mongoose.Schema({
   schedule: Object,
 });
 
-const ScheduleSchema = new mongoose.Schema({
-  username: String,
-  date: Date,
-  year: Number,
-  dayOfYear: Number,
-  availableTimes: [],
-  reservedTimes: []
-});
+// const ScheduleSchema = new mongoose.Schema({
+//   username: String,
+//   availableTimes: [],
+//   reservedTimes: []
+// });
 
 const AppointmentSchema = new mongoose.Schema({
   owner: String,
   name: String,
   email: String,
-  date: Date,
-  time: Number,
-  length: Number,
+  start: Date,
+  end: Date,
 });
 
 module.exports.UserSchema = UserSchema;
@@ -36,7 +32,7 @@ notes:
 user and appt schemas look good/necessary
 schedule schema, not so much
 
-example schedule object: 
+----OLD---- 
 {
   2018: {
     dayOfYear: {
@@ -50,4 +46,30 @@ example schedule object:
   }
 
 }
+
+---NEW schema---
+
+available times
+can have multiple in one day
+[
+  {
+    start:
+    end: 
+  }
+]
+
+scheduled appointment times
+rough schema
+[
+  {
+    id:
+    name: 
+    email:
+    start:
+    end: 
+  }
+
+]
+
+
 */
